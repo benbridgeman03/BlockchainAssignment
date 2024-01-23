@@ -32,5 +32,31 @@ namespace BlockchainAssignment
                 richTextBox1.Text = "Not a number!";
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String privKey;
+            Wallet.Wallet myNewWallet = new Wallet.Wallet(out privKey);
+            publicKey.Text = myNewWallet.publicID;
+            privateKey.Text = privKey;
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(Wallet.Wallet.ValidatePrivateKey(privateKey.Text, publicKey.Text)){
+                richTextBox1.Text = "Keys are valid";
+            }
+            else
+            {
+                richTextBox1.Text = "Keys are invalid";
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Transaction newTransaction = new Transaction(publicKey.Text, receiver.Text, Double.Parse(amount.Text), Double.Parse(fee.Text), privateKey.Text);
+            richTextBox1.Text = newTransaction.ToString();
+        }
     }
 }
