@@ -56,7 +56,25 @@ namespace BlockchainAssignment
         private void button4_Click(object sender, EventArgs e)
         {
             Transaction newTransaction = new Transaction(publicKey.Text, receiver.Text, Double.Parse(amount.Text), Double.Parse(fee.Text), privateKey.Text);
+            blockchain.TransactionPool.Add(newTransaction);
             richTextBox1.Text = newTransaction.ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.GetPendingTransactions());
+            blockchain.Blocks.Add(newBlock);
+            richTextBox1 .Text = newBlock.ToString();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            richTextBox1.Text = blockchain.ToString();
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+           // richTextBox1.Text = String.Join("\n " + blockchain.TransactionPool);
         }
     }
 }

@@ -46,6 +46,9 @@
             this.fee = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.receiver = new System.Windows.Forms.TextBox();
+            this.NewBlock = new System.Windows.Forms.Button();
+            this.PrintAll = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -177,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(244, 459);
+            this.label5.Location = new System.Drawing.Point(244, 455);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 15;
@@ -185,10 +188,40 @@
             // 
             // receiver
             // 
-            this.receiver.Location = new System.Drawing.Point(321, 456);
+            this.receiver.Location = new System.Drawing.Point(321, 452);
             this.receiver.Name = "receiver";
             this.receiver.Size = new System.Drawing.Size(257, 20);
             this.receiver.TabIndex = 16;
+            // 
+            // NewBlock
+            // 
+            this.NewBlock.Location = new System.Drawing.Point(12, 378);
+            this.NewBlock.Name = "NewBlock";
+            this.NewBlock.Size = new System.Drawing.Size(75, 44);
+            this.NewBlock.TabIndex = 17;
+            this.NewBlock.Text = "Generate New Block";
+            this.NewBlock.UseVisualStyleBackColor = true;
+            this.NewBlock.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // PrintAll
+            // 
+            this.PrintAll.Location = new System.Drawing.Point(159, 332);
+            this.PrintAll.Name = "PrintAll";
+            this.PrintAll.Size = new System.Drawing.Size(75, 23);
+            this.PrintAll.TabIndex = 18;
+            this.PrintAll.Text = "Print All";
+            this.PrintAll.UseVisualStyleBackColor = true;
+            this.PrintAll.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(159, 358);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 54);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Print Pending Transaction";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_2);
             // 
             // BlockchainApp
             // 
@@ -196,6 +229,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(681, 481);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.PrintAll);
+            this.Controls.Add(this.NewBlock);
             this.Controls.Add(this.receiver);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.fee);
@@ -239,6 +275,9 @@
         private System.Windows.Forms.TextBox fee;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox receiver;
+        private System.Windows.Forms.Button NewBlock;
+        private System.Windows.Forms.Button PrintAll;
+        private System.Windows.Forms.Button button5;
     }
 }
 
