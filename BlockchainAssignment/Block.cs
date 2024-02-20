@@ -37,7 +37,7 @@ namespace BlockchainAssignment
             this.index = index + 1;
             this.timeStamp = DateTime.Now;
             this.prevHash = hash;
-            this.hash = Mine();
+            this.hash = CreateHash();
         }
 
         public Block(Block block, List<Transaction> transactions, String minerAddress)
