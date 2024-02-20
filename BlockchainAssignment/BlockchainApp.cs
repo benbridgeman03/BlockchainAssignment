@@ -62,7 +62,9 @@ namespace BlockchainAssignment
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Block newBlock = new Block(blockchain.getLastBlock(), blockchain.GetPendingTransactions());
+            List<Transaction> transactions = blockchain.GetPendingTransactions();
+
+            Block newBlock = new Block(blockchain.getLastBlock(), transactions, publicKey.Text);
             blockchain.Blocks.Add(newBlock);
             richTextBox1 .Text = newBlock.ToString();
         }
@@ -74,7 +76,7 @@ namespace BlockchainAssignment
 
         private void button5_Click_2(object sender, EventArgs e)
         {
-           // richTextBox1.Text = String.Join("\n " + blockchain.TransactionPool);
+           richTextBox1.Text = String.Join("\n ", blockchain.TransactionPool);
         }
     }
 }
