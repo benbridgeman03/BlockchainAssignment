@@ -76,7 +76,7 @@ namespace BlockchainAssignment
 
         private void button5_Click_2(object sender, EventArgs e)
         {
-           richTextBox1.Text = String.Join("\n ", blockchain.TransactionPool);
+           richTextBox1.Text = String.Join("\n ", blockchain.TransactionPool); //Test
         }
     }
 }
