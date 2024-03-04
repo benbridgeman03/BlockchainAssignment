@@ -49,6 +49,11 @@
             this.NewBlock = new System.Windows.Forms.Button();
             this.PrintAll = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.radioButtonGreedy = new System.Windows.Forms.RadioButton();
+            this.radioButtonAlturistic = new System.Windows.Forms.RadioButton();
+            this.radioButtonRandom = new System.Windows.Forms.RadioButton();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -137,9 +142,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 428);
+            this.button4.Location = new System.Drawing.Point(247, 411);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 44);
+            this.button4.Size = new System.Drawing.Size(78, 67);
             this.button4.TabIndex = 10;
             this.button4.Text = "Create Transaction";
             this.button4.UseVisualStyleBackColor = true;
@@ -147,7 +152,7 @@
             // 
             // amount
             // 
-            this.amount.Location = new System.Drawing.Point(153, 428);
+            this.amount.Location = new System.Drawing.Point(412, 406);
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(60, 20);
             this.amount.TabIndex = 11;
@@ -155,7 +160,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 431);
+            this.label3.Location = new System.Drawing.Point(331, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 12;
@@ -164,7 +169,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(90, 455);
+            this.label4.Location = new System.Drawing.Point(331, 438);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 13;
@@ -172,7 +177,7 @@
             // 
             // fee
             // 
-            this.fee.Location = new System.Drawing.Point(153, 452);
+            this.fee.Location = new System.Drawing.Point(412, 432);
             this.fee.Name = "fee";
             this.fee.Size = new System.Drawing.Size(60, 20);
             this.fee.TabIndex = 14;
@@ -180,7 +185,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(244, 455);
+            this.label5.Location = new System.Drawing.Point(331, 461);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 15;
@@ -188,16 +193,17 @@
             // 
             // receiver
             // 
-            this.receiver.Location = new System.Drawing.Point(321, 452);
+            this.receiver.Location = new System.Drawing.Point(412, 458);
             this.receiver.Name = "receiver";
             this.receiver.Size = new System.Drawing.Size(257, 20);
             this.receiver.TabIndex = 16;
+            this.receiver.TextChanged += new System.EventHandler(this.receiver_TextChanged);
             // 
             // NewBlock
             // 
-            this.NewBlock.Location = new System.Drawing.Point(12, 378);
+            this.NewBlock.Location = new System.Drawing.Point(12, 415);
             this.NewBlock.Name = "NewBlock";
-            this.NewBlock.Size = new System.Drawing.Size(75, 44);
+            this.NewBlock.Size = new System.Drawing.Size(75, 67);
             this.NewBlock.TabIndex = 17;
             this.NewBlock.Text = "Generate New Block";
             this.NewBlock.UseVisualStyleBackColor = true;
@@ -223,12 +229,71 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_2);
             // 
+            // radioButtonGreedy
+            // 
+            this.radioButtonGreedy.AutoSize = true;
+            this.radioButtonGreedy.Location = new System.Drawing.Point(94, 438);
+            this.radioButtonGreedy.Name = "radioButtonGreedy";
+            this.radioButtonGreedy.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonGreedy.TabIndex = 21;
+            this.radioButtonGreedy.TabStop = true;
+            this.radioButtonGreedy.Text = "Greedy";
+            this.radioButtonGreedy.UseVisualStyleBackColor = true;
+            this.radioButtonGreedy.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButtonAlturistic
+            // 
+            this.radioButtonAlturistic.AutoSize = true;
+            this.radioButtonAlturistic.Location = new System.Drawing.Point(94, 461);
+            this.radioButtonAlturistic.Name = "radioButtonAlturistic";
+            this.radioButtonAlturistic.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonAlturistic.TabIndex = 22;
+            this.radioButtonAlturistic.TabStop = true;
+            this.radioButtonAlturistic.Text = "Alturistic";
+            this.radioButtonAlturistic.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonRandom
+            // 
+            this.radioButtonRandom.AutoSize = true;
+            this.radioButtonRandom.Location = new System.Drawing.Point(93, 415);
+            this.radioButtonRandom.Name = "radioButtonRandom";
+            this.radioButtonRandom.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonRandom.TabIndex = 23;
+            this.radioButtonRandom.TabStop = true;
+            this.radioButtonRandom.Text = "Random";
+            this.radioButtonRandom.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(594, 414);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 37);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "Validate Chain";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(513, 415);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 37);
+            this.button7.TabIndex = 25;
+            this.button7.Text = "Check Balance";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // BlockchainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 481);
+            this.ClientSize = new System.Drawing.Size(677, 494);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.radioButtonRandom);
+            this.Controls.Add(this.radioButtonAlturistic);
+            this.Controls.Add(this.radioButtonGreedy);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.PrintAll);
             this.Controls.Add(this.NewBlock);
@@ -278,6 +343,11 @@
         private System.Windows.Forms.Button NewBlock;
         private System.Windows.Forms.Button PrintAll;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.RadioButton radioButtonGreedy;
+        private System.Windows.Forms.RadioButton radioButtonAlturistic;
+        private System.Windows.Forms.RadioButton radioButtonRandom;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
